@@ -17,7 +17,39 @@ function refreshBalance() {
     console.log(e);
     setStatus("Error getting balance; see log.");
   });
+
+
+  refreshTransactions();
 };
+
+function refreshNumberOfUsers(){
+
+  var meta = MetaCoin.deployed();
+  var thisAccount = account
+  meta.getNumberOfUsers.call({from:thisAccount}).then(function(value){
+
+    var numUsersElement = document.getElementById("transactions");
+    numUsersElement.innerHTML = value.valueOf() + " users connected";
+
+  }).catch(function(e){
+    console.log("something went wrong")
+  });
+
+}
+
+function refreshTransactions(){
+  
+  var meta = MetaCoin.deployed();
+
+  meta.getNumberOfTransactions.call({from: account}).then(function(value) {
+    var transactions_element = document.getElementById("transactions");
+    transactions_element.innerHTML = value.valueOf();
+  }).catch(function(e) {
+    console.log(e);
+    setStatus("Error getting transactions; see log.");
+  });
+
+}
 
 function sendCoin() {
   var meta = MetaCoin.deployed();

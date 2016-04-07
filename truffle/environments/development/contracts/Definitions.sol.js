@@ -11,35 +11,35 @@ var factory = function factory(Pudding) {
   // the easiest way to extend a Babel-based class. Note that the
   // resulting .js file does not have a dependency on Babel.
 
-  var MetaCoin = (function (_Pudding) {
-    _inherits(MetaCoin, _Pudding);
+  var Definitions = (function (_Pudding) {
+    _inherits(Definitions, _Pudding);
 
-    function MetaCoin() {
-      _classCallCheck(this, MetaCoin);
+    function Definitions() {
+      _classCallCheck(this, Definitions);
 
-      _get(Object.getPrototypeOf(MetaCoin.prototype), "constructor", this).apply(this, arguments);
+      _get(Object.getPrototypeOf(Definitions.prototype), "constructor", this).apply(this, arguments);
     }
 
-    return MetaCoin;
+    return Definitions;
   })(Pudding);
 
   ;
 
   // Set up specific data for this class.
-  MetaCoin.abi = [{ "constant": false, "inputs": [], "name": "getNumberOfTransactions", "outputs": [{ "name": "", "type": "uint256" }], "type": "function" }, { "constant": false, "inputs": [{ "name": "receiver", "type": "address" }, { "name": "amount", "type": "uint256" }], "name": "sendCoin", "outputs": [{ "name": "sufficient", "type": "bool" }], "type": "function" }, { "constant": false, "inputs": [{ "name": "addr", "type": "address" }], "name": "getBalance", "outputs": [{ "name": "", "type": "uint256" }], "type": "function" }, { "inputs": [], "type": "constructor" }];
-  MetaCoin.binary = "6060604052600160a060020a03321660009081526001602052604081206127109055805560b880602f6000396000f3606060405260e060020a600035046324ba506d8114602e57806390b98a1114603c578063f8b2cb4f146068575b005b6000545b6060908152602090f35b603260043560243533600160a060020a03166000908152600160205260408120548290101560875760b2565b600160a060020a03600435166000908152600160205260409020546032565b604080822080548490039055600160a060020a03841682528120805483019055805460019081019091555b9291505056";
+  Definitions.abi = [];
+  Definitions.binary = "606060405260068060106000396000f3606060405200";
 
-  if ("0x881181409228640c5b25b5a78d34b77f6253d78d" != "") {
-    MetaCoin.address = "0x881181409228640c5b25b5a78d34b77f6253d78d";
+  if ("" != "") {
+    Definitions.address = "";
 
     // Backward compatibility; Deprecated.
-    MetaCoin.deployed_address = "0x881181409228640c5b25b5a78d34b77f6253d78d";
+    Definitions.deployed_address = "";
   }
 
-  MetaCoin.generated_with = "1.0.3";
-  MetaCoin.contract_name = "MetaCoin";
+  Definitions.generated_with = "1.0.3";
+  Definitions.contract_name = "Definitions";
 
-  return MetaCoin;
+  return Definitions;
 };
 
 // Nicety for Node.
@@ -50,5 +50,5 @@ if (typeof module != "undefined") {
 } else {
   // There will only be one version of Pudding in the browser,
   // and we can use that.
-  window.MetaCoin = factory;
+  window.Definitions = factory;
 }
